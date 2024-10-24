@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Layout(props) {
   const [isReadyForInstall, setIsReadyForInstall] = React.useState(false);
@@ -48,17 +48,21 @@ function Layout(props) {
       <nav>
         <ul>
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/home">Inicio</Link>
           </li>
           <li>
             <Link to="/acerca">Acerca</Link>
           </li>
           <li>
-            <Link to="/galeria">Galería</Link>
+            <Link to="/usuarios">Gallery</Link>
+          </li>
+          
+          <li>
+            <Link to="/usersDashboard">Usuarios</Link>
           </li>
         </ul>
       </nav>
-
+        <Outlet/>
       {props.children}
     </div>
   );
